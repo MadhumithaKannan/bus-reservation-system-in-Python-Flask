@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<style>
+body{
+margin: auto;
+    width: 50%;
+    padding: 10px;
+
+}
+
+h3,h2{
+font-size:2vw;
+font-weight:bold;
+font-family: "Times New Roman", Times, serif;
+text-align:center;
+}
+
+
+div {
+  
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+   <body>
+   <div>
+       <h2>{{ msg }}</h2>
+{% if user!='admin' %}
+      <a href = "/user">go back to home page</a>
+{% else %}
+ <a href = "/admin.html">go back to home page</a>
+{% endif %}
+
+      <div>
+   </body>
+</html>

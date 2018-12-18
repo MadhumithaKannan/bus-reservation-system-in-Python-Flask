@@ -1,0 +1,36 @@
+@app.route('/user') #user login
+def user():
+   if 'username' in session:
+      username = session['username']
+      pw = session['password']
+      con = sql.connect("database.db")
+      con.row_factory = sql.Row
+      
+      cur = con.cursor()
+      cur.execute("SELECT * FROM user WHERE name=(?) AND pass=(?) ",(username,pw))
+      
+      rows = cur.fetchone();
+      if (rows):
+         return render_template('userhome.html',user=username)
+         
+      else:
+         return "You are not logged in as username or password is incorrect <br><a href = '/login'></b>" + \
+      "click here to log in</b></a>"
+         
+   return render_template('userprehome.html') #initial page for login/sign up
+
+
+@app.route('/login', methods = ['GET', 'POST'])
+def login():
+   if request.method == 'POST':
+      session['username'] = request.form['username']
+      session['password'] = request.form['password']
+
+      return redirect(url_for('user'))
+   return render_template('userlogin.html')
+
+@app.route('/logout')
+def logout():
+   # remove the username from the session if it is there
+   session.pop('username', None)
+   return redirect(url_for('user'))

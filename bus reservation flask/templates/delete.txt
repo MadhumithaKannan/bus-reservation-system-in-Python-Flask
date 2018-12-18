@@ -1,0 +1,14 @@
+<html>
+   <body>
+      
+      <form action = "{{ url_for('delrec') }}" method = "POST">
+         <h3>BUS RECORD DELETION</h3>
+<br>
+        
+         ENTER ID TO DELETE<br>
+         <input type = "number" name = "id" autocomplete="off" /></br>
+<input type = "submit" value = "submit" /><br>
+      </form>
+      
+   </body>
+</html>

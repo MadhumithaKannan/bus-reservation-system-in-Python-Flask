@@ -1,0 +1,36 @@
+<html>
+<style>
+body{
+margin: auto;
+    width: 50%;
+    padding: 10px;
+
+}
+
+h3,h2{
+font-size:2vw;
+font-weight:bold;
+font-family: "Times New Roman", Times, serif;
+text-align:center;
+}
+
+
+div {
+  
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<body>
+<div>
+You are not logged in <br><a href = '/login'></b>
+   click here to log in</b></a><br>
+ click here to sign up <br><a href= '/user.html'></b> 
+ click here to sign up</b></a>
+<br>
+ click here to go back to home page <br><a href= '/'></b> 
+ click here to go back to home page</b></a>
+</div>
+</body>
+</html>
